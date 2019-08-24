@@ -59,7 +59,7 @@ public class DeliveryApplicationTests {
 					case 'I': //giro a la izquierda
 						a=Movimiento.izquierda(a);
 						break;
-				}
+				} 
 	  }
 		 
 				
