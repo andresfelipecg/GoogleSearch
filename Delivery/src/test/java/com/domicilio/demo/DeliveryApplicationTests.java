@@ -48,7 +48,7 @@ public class DeliveryApplicationTests {
 		  pasos=entrada.toCharArray();
 		  for(char c:pasos) {
 				//System.out.println("Los pasos son "+c);
-				
+				 
 				switch(c) {
 					case 'A': //Adelante
 						a=Movimiento.adelante(a);
