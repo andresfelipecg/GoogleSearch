@@ -19,20 +19,25 @@ public class FileParser {
 	
 	
 	
-	public List<String> leer(){
+	public List<String> leer(String archivoIn){
 		
 		try {
 			//archivo= new File (rutaLectura+archivoIn);
-			archivo= new File (getClass().getClassLoader().getResource(archivoIn).getFile());
+			
+			archivo= new File (getClass().getClassLoader().getResource("in"+archivoIn+".txt").getFile());
 			fr= new FileReader(archivo);
 			br= new BufferedReader(fr);
 			
 			String linea;
-	         while((linea=br.readLine())!=null)
-	        	 
-	        	 
-	        	 addResultado(linea);
+			int ordenesMaximas=10; //maxima capacidad de ordenes por drone
 			
+	         while((linea=br.readLine())!=null) {
+	        	 ordenesMaximas-=1;
+	        	 if(ordenesMaximas>=0) {
+	        	 addResultado(linea);
+	        	 }
+	         
+	         }
 			
 		}catch(Exception e) {
 			e.printStackTrace();

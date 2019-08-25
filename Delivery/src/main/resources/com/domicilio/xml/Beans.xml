@@ -7,31 +7,32 @@
 
 
 <!-- La ruta se aigna leyendo el archivo .txt -->
-<bean id="asignacion" class="com.domicilio.bean.Asignacion">
+
+<bean id="asignacion" class="com.domicilio.bean.Asignacion" scope="prototype">
 <property name="drone" ref="drone"></property>
 <!--  <property name="ruta" ref="ruta"></property> -->
 </bean>
    
    <!-- inicializacion bean Drone -->
-   <bean id="drone" class="com.domicilio.bean.Drone">
-   <property name="id" value="1"></property>
+   <bean id="drone" class="com.domicilio.bean.Drone" scope="prototype">
+  
    <property name="location" ref="location"></property>
    </bean>
    
    
    
-   <bean id="location" class="com.domicilio.bean.Location">
+   <bean id="location" class="com.domicilio.bean.Location" scope="prototype">
    <property name="coordenadaX" value="0"></property>
    <property name="coordenadaY" value="0"></property>
    <property name="puntoCardinalInicial" value="dirección Norte"></property>
    </bean>
    
-   <bean id="fileparser" class="com.domicilio.util.FileParser">
+   <bean id="fileparser" class="com.domicilio.util.FileParser" scope="prototype">
    <property name="rutaLectura" value="src/main/resources/"></property>
    <property name="archivoIn" value="in.txt"></property>
    </bean>
    
-   <bean id="filecreator" class="com.domicilio.util.FileCreator">
+   <bean id="filecreator" class="com.domicilio.util.FileCreator" scope="prototype">
    <property name="rutaEscritura" value="src/main/resources/"></property>
    <property name="archivoOut" value="out.txt"></property>
    </bean>

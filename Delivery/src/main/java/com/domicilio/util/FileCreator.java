@@ -21,7 +21,7 @@ public class FileCreator {
 		try {
 			
 			//fw=new FileWriter(rutaEscritura+archivoOut);
-			f=new File(rutaEscritura+archivoOut);
+			f=new File(rutaEscritura+"out"+a.getDrone().getId()+".txt");
 			f.setWritable(true);
             f.setReadable(true);
 			fw=new FileWriter(f);
